@@ -2,7 +2,7 @@
 
 ## Web based app for friendly betting. No prizes for winners. Just for fun!
 
-### Version 1.0 feature collection:
+### Version 1.0 feature collection target:
 1) Authentication system
     - Login
     - Register
