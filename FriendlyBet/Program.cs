@@ -1,4 +1,5 @@
 using FriendlyBet.Data;
+using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,34 @@ namespace FriendlyBet
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddAuthentication()
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+                    facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+                    facebookOptions.AccessDeniedPath = "/Identity/Account/AccessDeniedPathInfo";
+
+                });
+            //             .AddGoogle(options =>
+            //{
+            //    IConfigurationSection googleAuthNSection =
+            //    config.GetSection("Authentication:Google");
+            //    options.ClientId = googleAuthNSection["ClientId"];
+            //    options.ClientSecret = googleAuthNSection["ClientSecret"];
+            //})
+
+            //.AddMicrosoftAccount(microsoftOptions =>
+            //{
+            //    microsoftOptions.ClientId = config["Authentication:Microsoft:ClientId"];
+            //    microsoftOptions.ClientSecret = config["Authentication:Microsoft:ClientSecret"];
+            //})
+            //.AddTwitter(twitterOptions =>
+            //{
+            //    twitterOptions.ConsumerKey = config["Authentication:Twitter:ConsumerAPIKey"];
+            //    twitterOptions.ConsumerSecret = config["Authentication:Twitter:ConsumerSecret"];
+            //    twitterOptions.RetrieveUserDetails = true;
+            //});
 
             var app = builder.Build();
 
