@@ -5,10 +5,15 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-FriendlyBet-10b80b7c-0ec3-48b5-9c9d-0eb4f1bdf058</UserSecretsId>
+    <CodeAnalysisRuleSet>..\.sonarlint\ricolino_friendlybetcsharp.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Remove="Areas\Identity\Pages\AccessDeniedPathInfo.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\.sonarlint\ricolino_friendlybet\CSharp\SonarLint.xml" Link="SonarLint.xml" />
   </ItemGroup>
 
   <ItemGroup>
