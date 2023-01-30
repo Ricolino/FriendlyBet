@@ -21,14 +21,19 @@ namespace FriendlyBet
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddAuthentication()
+            _ = builder.Services.AddAuthentication()
                 .AddFacebook(facebookOptions =>
                 {
                     facebookOptions.AppId = builder.Configuration["Authentication:Facebook:AppId"];
                     facebookOptions.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
                     facebookOptions.AccessDeniedPath = "/Identity/Account/AccessDeniedPathInfo";
 
-                });
+                })
+                .AddMicrosoftAccount(microsoftOptions =>
+            {
+                microsoftOptions.ClientId = builder.Configuration["Authentication:Microsoft:ClientId"];
+                microsoftOptions.ClientSecret = builder.Configuration["Authentication:Microsoft:ClientSecret"];
+            });
             //             .AddGoogle(options =>
             //{
             //    IConfigurationSection googleAuthNSection =
@@ -37,11 +42,6 @@ namespace FriendlyBet
             //    options.ClientSecret = googleAuthNSection["ClientSecret"];
             //})
 
-            //.AddMicrosoftAccount(microsoftOptions =>
-            //{
-            //    microsoftOptions.ClientId = config["Authentication:Microsoft:ClientId"];
-            //    microsoftOptions.ClientSecret = config["Authentication:Microsoft:ClientSecret"];
-            //})
             //.AddTwitter(twitterOptions =>
             //{
             //    twitterOptions.ConsumerKey = config["Authentication:Twitter:ConsumerAPIKey"];
