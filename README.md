@@ -12,4 +12,5 @@
     - Session expiration logic
 2) Home page
 3) Football matches from Premiere League
-4) User's dashboard
+4) Formula 1
+5) User's dashboard
