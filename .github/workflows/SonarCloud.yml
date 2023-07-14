@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+      - v1.0
+      - accountConfAndPassRecovery
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
