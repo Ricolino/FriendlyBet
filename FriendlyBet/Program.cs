@@ -1,6 +1,7 @@
 using FriendlyBet.Data;
-using Microsoft.AspNetCore.Authentication.Facebook;
+using FriendlyBet.Services.Email;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace FriendlyBet
@@ -48,6 +49,9 @@ namespace FriendlyBet
             //    twitterOptions.ConsumerSecret = config["Authentication:Twitter:ConsumerSecret"];
             //    twitterOptions.RetrieveUserDetails = true;
             //});
+
+            builder.Services.AddTransient<IEmailSender, EmailSender>();
+            builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 
             var app = builder.Build();
 
