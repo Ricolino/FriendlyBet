@@ -23,11 +23,6 @@ namespace FriendlyBet.Controllers
             return View();
         }
 
-        public IActionResult HelpContent()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
