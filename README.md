@@ -18,18 +18,18 @@
 
 ## Contributors
 
-<!-- readme: collaborators,contributors,snyk-bot/-,guistracini-outsurance-ie/- -start -->
+<!-- readme: collaborators,contributors,snyk-bot -start -->
 <table>
 <tr>
     <td align="center">
         <a href="https://github.com/Ricolino">
-            <img src="https://avatars.githubusercontent.com/u/28239685?v=4" width="100;" alt="Ricolino"/>
+            <img src="https://github.com/Ricolino.png" width="100;" alt="Ricolino"/>
             <br />
             <sub><b>Ricolino</b></sub>
         </a>
     </td></tr>
 </table>
-<!-- readme: collaborators,contributors,snyk-bot/-,guistracini-outsurance-ie/- -end -->
+<!-- readme: collaborators,contributors,snyk-bot -end -->
 
 ## Bots
 
