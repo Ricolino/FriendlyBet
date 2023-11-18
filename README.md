@@ -1,4 +1,4 @@
-# FriendlyBet
+# FriendlyBet [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Web based app for friendly betting. No prizes for winners. Just for fun!
 
